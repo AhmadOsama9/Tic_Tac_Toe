@@ -1,0 +1,93 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --orange: #F2c14e;
+    --winning-blocks: #2d414b;
+    --blue: #2D9CDB;
+    --white: #FFFFFF;
+    --black: #000000;
+    --gray: #E0E0E0;
+    --dark-gray: #707070;
+    --font: 'Roboto', sans-serif;
+  }
+  
+  body {
+    color: var(--black);
+    font-family: var(--font);
+  }
+  
+  h1 {
+    font-size: clamp(2rem, 10vw + 1rem, 3rem);
+    text-transform: uppercase;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--blue);
+  }
+  
+  #gameboard {
+    width: clamp(280px, 80vw, 800px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .box {
+    flex-basis: calc((100% - 4px) / 3);
+    height: clamp(100px, 20vw, 150px);
+    width: clamp(100px, 20vw, 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid var(--white);
+    border-right: 2px solid var(--white);
+    color: var(--white);
+    font-size: clamp(1rem, 5vw + 1rem, 2rem);
+    background-color: var(--gray);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  
+  .box:hover {
+    background-color: var(--dark-gray);
+    cursor: pointer;
+  }
+  
+  .box:nth-child(3n) {
+    border-right: none;
+  }
+  
+  .box:nth-child(6) ~ .box {
+    border-bottom: none;
+  }
+  
+  button {
+    padding: clamp(5px, 1vw, 10px) clamp(10px, 2vw, 20px);
+    border-radius: clamp(5px, 1vw, 10px);
+    background-color: var(--white);
+    color: var(--black);
+    border-color: var(--white);
+    font-size: clamp(0.8rem, 3vw + 1rem, 1.2rem);
+    transition: 0.2s transform;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+    background-color: var(--orange);
+    border-color: var(--orange);
+    color: var(--white);
+  }
+  
